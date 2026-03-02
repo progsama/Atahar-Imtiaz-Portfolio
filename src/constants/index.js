@@ -44,7 +44,7 @@ const abilities = [
   {
     imgPath: "/images/code.svg",
     title: "Musician",
-    desc: "I play guitar, keyboard, and piano, and I've performed live a few times.",
+    desc: "I play guitar, keyboard, and drums, and I've performed live a few times.",
   },
   {
     imgPath: "/images/logos/React.svg",
