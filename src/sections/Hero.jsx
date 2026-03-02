@@ -48,7 +48,7 @@ const Hero = () => {
               <h1>that Deliver Results</h1>
             </div>
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, My name is Atahar Imtiaz, a Computer Science graduate from the
+              Hi! My name is Atahar Imtiaz, a Computer Science graduate from the
               University of British Columbia.
             </p>
             <Button

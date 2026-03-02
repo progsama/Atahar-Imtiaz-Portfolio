@@ -1,5 +1,5 @@
 import { useState, lazy, Suspense } from "react";
-import Hero from "./sections/hero";
+import Hero from "./sections/Hero";
 import NavBar from "./components/NavBar";
 import ResumeModal from "./components/ResumeModal";
 
@@ -9,7 +9,10 @@ const Contact = lazy(() => import("./sections/Contact"));
 const Footer = lazy(() => import("./sections/Footer"));
 
 const SectionFallback = () => (
-  <div className="min-h-[50vh] flex items-center justify-center" aria-hidden="true">
+  <div
+    className="min-h-[50vh] flex items-center justify-center"
+    aria-hidden="true"
+  >
     <div className="animate-pulse w-12 h-12 rounded-full bg-black-50" />
   </div>
 );
