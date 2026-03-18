@@ -5,8 +5,7 @@ const navLinks = [
   },
   {
     name: "Resume",
-    link: "/resume.pdf",
-    modal: true,
+    link: "#resume",
   },
   {
     name: "Skills",

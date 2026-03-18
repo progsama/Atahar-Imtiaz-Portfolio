@@ -2,23 +2,18 @@ import { useState, useEffect } from "react";
 
 import { navLinks } from "../constants";
 
-const NavBar = ({ onResumeClick }) => {
+const NavBar = () => {
   // track if the user has scrolled down the page
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // create an event listener for when the user scrolls
     const handleScroll = () => {
-      // check if the user has scrolled down at least 10px
-      // if so, set the state to true
       const isScrolled = window.scrollY > 10;
       setScrolled(isScrolled);
     };
 
-    // add the event listener to the window
     window.addEventListener("scroll", handleScroll);
 
-    // cleanup the event listener when the component is unmounted
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -31,29 +26,18 @@ const NavBar = ({ onResumeClick }) => {
 
         <nav className="desktop">
           <ul>
-            {navLinks.map(({ link, name, newTab, modal }) => (
+            {navLinks.map(({ link, name, newTab }) => (
               <li key={name} className="group">
-                {modal ? (
-                  <button
-                    type="button"
-                    className="nav-link-button"
-                    onClick={() => onResumeClick?.()}
-                  >
-                    <span>{name}</span>
-                    <span className="underline" />
-                  </button>
-                ) : (
-                  <a
-                    href={link}
-                    {...(newTab && {
-                      target: "_blank",
-                      rel: "noopener noreferrer",
-                    })}
-                  >
-                    <span>{name}</span>
-                    <span className="underline" />
-                  </a>
-                )}
+                <a
+                  href={link}
+                  {...(newTab && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
+                >
+                  <span>{name}</span>
+                  <span className="underline" />
+                </a>
               </li>
             ))}
           </ul>

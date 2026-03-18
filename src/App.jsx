@@ -1,7 +1,6 @@
-import { useState, lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import Hero from "./sections/Hero.jsx";
 import NavBar from "./components/NavBar";
-import ResumeModal from "./components/ResumeModal";
 
 const ShowcaseSection = lazy(() => import("./sections/ShowcaseSection.jsx"));
 const TechStack = lazy(() => import("./sections/TechStack.jsx"));
@@ -18,15 +17,9 @@ const SectionFallback = () => (
 );
 
 const App = () => {
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
-
   return (
     <>
-      <NavBar onResumeClick={() => setIsResumeOpen(true)} />
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
+      <NavBar />
       <Hero />
       <Suspense fallback={<SectionFallback />}>
         <ShowcaseSection />
