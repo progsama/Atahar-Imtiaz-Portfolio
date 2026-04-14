@@ -5,6 +5,8 @@ import TitleHeader from "../components/TitleHeader";
 import { techStackImgs } from "../constants";
 
 const TechStack = () => {
+  const marqueeCopies = ["a", "b"];
+
   useGSAP(() => {
     gsap.fromTo(
       ".tech-card",
@@ -33,54 +35,24 @@ const TechStack = () => {
         <div className="tech-stack-marquee-wrapper mt-16">
           <div className="marquee tech-stack-marquee">
             <div className="marquee-box tech-stack-marquee-box">
-              {techStackImgs.map((techStackIcon, index) => (
-                <div
-                  key={`a-${index}`}
-                  className="card-border tech-card overflow-hidden rounded-full flex-none tech-stack-marquee-item"
-                >
-                  <div className="tech-card-animated-bg" />
-                  <div className="tech-card-content">
-                    <div className="tech-icon-wrapper">
-                      <img src={techStackIcon.imgPath} alt="" loading="lazy" />
-                    </div>
-                    <div className="padding-x w-full">
-                      <p>{techStackIcon.name}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-              {techStackImgs.map((techStackIcon, index) => (
-                <div
-                  key={`b-${index}`}
-                  className="card-border tech-card overflow-hidden rounded-full flex-none tech-stack-marquee-item"
-                >
-                  <div className="tech-card-animated-bg" />
-                  <div className="tech-card-content">
-                    <div className="tech-icon-wrapper">
-                      <img src={techStackIcon.imgPath} alt="" loading="lazy" />
-                    </div>
-                    <div className="padding-x w-full">
-                      <p>{techStackIcon.name}</p>
+              {marqueeCopies.flatMap((copyKey) =>
+                techStackImgs.map((techStackIcon, index) => (
+                  <div
+                    key={`${copyKey}-${index}`}
+                    className="card-border tech-card overflow-hidden rounded-full flex-none tech-stack-marquee-item"
+                  >
+                    <div className="tech-card-animated-bg" />
+                    <div className="tech-card-content">
+                      <div className="tech-icon-wrapper">
+                        <img src={techStackIcon.imgPath} alt="" loading="lazy" />
+                      </div>
+                      <div className="padding-x w-full">
+                        <p>{techStackIcon.name}</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
-              {techStackImgs.map((techStackIcon, index) => (
-                <div
-                  key={`c-${index}`}
-                  className="card-border tech-card overflow-hidden rounded-full flex-none tech-stack-marquee-item"
-                >
-                  <div className="tech-card-animated-bg" />
-                  <div className="tech-card-content">
-                    <div className="tech-icon-wrapper">
-                      <img src={techStackIcon.imgPath} alt="" loading="lazy" />
-                    </div>
-                    <div className="padding-x w-full">
-                      <p>{techStackIcon.name}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+                ))
+              )}
             </div>
           </div>
         </div>
