@@ -218,7 +218,7 @@ button:focus-visible {
     @apply w-full mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
 
     .showcaselayout {
-      @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8 w-full;
+      @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8 w-full;
     }
 
     .project-card {
@@ -228,7 +228,7 @@ button:focus-visible {
       box-shadow: 0 0 0 1px rgba(98, 224, 255, 0.06), 0 0 24px rgba(98, 224, 255, 0.08);
 
       .image-wrapper {
-        @apply aspect-square md:aspect-[4/3] relative flex-shrink-0;
+        @apply aspect-[16/10] md:aspect-[4/3] relative flex-shrink-0;
 
         img {
           @apply w-full h-full object-cover rounded-t-xl;
@@ -245,6 +245,24 @@ button:focus-visible {
         p {
           @apply text-sm md:text-base line-clamp-2;
         }
+      }
+
+      &.placeholder {
+        @apply border-dashed;
+      }
+
+      .placeholder-bg {
+        @apply flex items-center justify-center;
+        background:
+          linear-gradient(135deg, rgba(98, 224, 255, 0.1), rgba(138, 92, 255, 0.12)),
+          rgba(7, 11, 20, 0.8);
+      }
+
+      .placeholder-tag {
+        @apply text-xs md:text-sm uppercase tracking-[0.16em] px-4 py-2 rounded-full;
+        border: 1px solid rgba(125, 249, 255, 0.32);
+        color: #c9f4ff;
+        background: rgba(98, 224, 255, 0.08);
       }
     }
   }
