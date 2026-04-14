@@ -81,6 +81,14 @@ const techStackImgs = [
     name: "Docker",
     imgPath: "/images/logos/docker.png",
   },
+  {
+    name: "SpringBoot Developer",
+    imgPath: "/images/logos/springboot.svg",
+  },
+  {
+    name: "Cloud Deployment",
+    imgPath: "/images/logos/aws.svg",
+  },
 ];
 
 const socialImgs = [
